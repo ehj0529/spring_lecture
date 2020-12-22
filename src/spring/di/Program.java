@@ -23,8 +23,8 @@ public class Program {
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring/di/setting.xml");
 		
-		Exam exam = context.getBean(Exam.class);
-		System.out.println(exam.toString());
+		//Exam exam = context.getBean(Exam.class);
+		//System.out.println(exam.toString());
 		
 		ExamConsole console = (ExamConsole) context.getBean("console");  //obj 형식으로 가져와서 형변환하는 방식.
 		//ExamConsole console = context.getBean(ExamConsole.class);  //자료형으로 가져오는 방식.
