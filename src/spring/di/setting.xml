@@ -35,12 +35,13 @@
 	</bean>
 	 -->
 	
-	<context:annotation-config/>
+	<!-- <context:annotation-config/> -->
+	<context:component-scan base-package="spring.di.ui"></context:component-scan>
 	<!-- ExamConsole console = new GridExamConsole(); -->
-	<bean id="console" class="spring.di.ui.InlineExamConsole">
-		<!-- console.setExam(exam); -->
-		<!-- <property name="exam" ref="exam"/> -->
-	</bean>
+	<!-- <bean id="console" class="spring.di.ui.InlineExamConsole">
+		console.setExam(exam);
+		<property name="exam" ref="exam"/>
+	</bean> -->
 
 	<!-- <util:list id="exams"  list-class="java.util.ArrayList">
 		<bean id="exam" class="spring.di.entity.NewlecExam" p:kor="2" p:eng="2" />

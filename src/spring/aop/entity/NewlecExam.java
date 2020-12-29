@@ -1,12 +1,8 @@
-package spring.di.entity;
-
-import org.springframework.beans.factory.annotation.Value;
+package spring.aop.entity;
 
 public class NewlecExam implements Exam {
 
-	@Value("20")
 	private int kor ;
-	@Value("30")
 	private int eng ;
 	private int math ;
 	private int com;
@@ -57,14 +53,31 @@ public class NewlecExam implements Exam {
 
 	@Override
 	public int total() {
-		// TODO Auto-generated method stub
-		return kor+eng+math+com;
+		
+		//long startTime = System.currentTimeMillis();
+
+		int result = kor+eng+math+com;
+		
+		try {
+			Thread.sleep(200);
+		} catch (InterruptedException e) {
+			
+			System.out.println(e.toString());
+			e.printStackTrace();
+		}
+		
+		//long endTime = System.currentTimeMillis();
+		
+		//String message = (endTime - startTime) +" ms ½Ã°£ ¼Ò¿ä µÊ";
+		//System.out.println(message);
+		
+		return result;
 	}
 
 	@Override
 	public float avg() {
-		// TODO Auto-generated method stub
-		return total() / 4.0f;
+		float result = total() / 4.0f ; 
+		return result;
 	}
 
 	@Override
