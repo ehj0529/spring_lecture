@@ -8,11 +8,11 @@ public class NewlecExam implements Exam {
 	private int com;
 	
 	public NewlecExam() {
-		// TODO Auto-generated constructor stub
+		System.out.println("기본 생성자를 만들다");
 	}
 		
 	public NewlecExam(int kor, int eng, int math, int com) {
-		
+		System.out.println("생성자를 만들다");
 		this.kor = kor;
 		this.eng = eng;
 		this.math = math;
@@ -55,8 +55,11 @@ public class NewlecExam implements Exam {
 	public int total() {
 		
 		//long startTime = System.currentTimeMillis();
-
+		
 		int result = kor+eng+math+com;
+		
+		if(kor > 100)
+			throw new IllegalArgumentException("유효하지 않은 국어점수");
 		
 		try {
 			Thread.sleep(200);
